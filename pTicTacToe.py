@@ -37,20 +37,19 @@ class tictactoe:
                     dogru = True
             while cizgiler[self.x_oyuncu_hamle-1] != "-":
                 self.x_oyuncu_hamle = int(input(f"{self.x_oyuncu} bos bir yer sec = "))
-                
             cizgiler[self.x_oyuncu_hamle-1] = "X"
             sayilar[self.x_oyuncu_hamle-1] = 0
             os.system("cls")
             print(yazdir_cizgiler())
             kontrol = tictactoe.yatay_kontrol("X")
             if kontrol == True:
-                print(f"{self.o_oyuncu} oyunu kazandı")
+                print(f"{self.x_oyuncu} oyunu kazandı")
                 evet = input("bir daha oynamak istermisiniz = ").lower()
                 if evet[0] == "e":
                     ekle("sil")
                     os.system("cls")
                     print(yazdir_cizgiler())
-                    tictactoe()
+                    tictactoe().oyun()
                 else:
                     exit()
             dogru = True
@@ -74,7 +73,7 @@ class tictactoe:
                     ekle("sil")
                     os.system("cls")
                     print(yazdir_cizgiler())
-                    tictactoe()
+                    tictactoe().oyun()
                 else:
                     exit()
 tictactoe().oyun()
